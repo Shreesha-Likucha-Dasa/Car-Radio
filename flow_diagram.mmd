@@ -1,0 +1,74 @@
+flowchart TD
+    A[App Launch] --> B[MainActivity onCreate]
+    B --> C[Display Instructions]
+    C --> D[Android Auto Connects]
+    D --> E[CarRadioService onCreate]
+    E --> F[Initialize ExoPlayer & MediaSession]
+    F --> G[Fetch Local Stations]
+    G --> H[Cache Stations]
+
+    H --> I[User Browses Root]
+    I --> J[onGetLibraryRoot]
+    J --> K[Return Folders: Local & Favorites]
+
+    K --> L{User Selects Folder}
+    L --> M[Local Stations]
+    L --> N[Favorites]
+
+    M --> O[onGetChildren: folder_local]
+    O --> P[Set currentContextList to localStationsCache]
+    P --> Q[Return Station MediaItems]
+
+    N --> R[onGetChildren: folder_favorites]
+    R --> S[Set currentContextList to favorites]
+    S --> T[Return Favorite MediaItems]
+
+    Q --> U[User Selects Station]
+    T --> U
+    U --> V[onAddMediaItems]
+    V --> W[Resolve Station]
+    W --> X[Play in ExoPlayer]
+    X --> Y[onMediaItemTransition]
+    Y --> Z[updateCustomLayout: Show Heart Button]
+
+    Z --> AA[User Presses Next/Prev]
+    AA --> BB[playNextOrPrevious]
+    BB --> CC[Find Next in currentContextList]
+    CC --> DD[Play Next Station]
+
+    Z --> EE[User Presses Heart]
+    EE --> FF[onCustomCommand: Toggle Favorite]
+    FF --> GG[Update FavoritesManager]
+    GG --> HH[updateCustomLayout: Change Icon]
+    HH --> II[notifyChildrenChanged: Refresh Lists]
+
+    D --> JJ[User Searches]
+    JJ --> KK[onSearch]
+    KK --> LL[performSmartSearch]
+    LL --> MM[Cache Search Results]
+    MM --> NN[onGetSearchResult]
+    NN --> OO[Set currentContextList to search results]
+    OO --> PP[Return Search MediaItems]
+    PP --> U
+
+    subgraph "Initialization Flow"
+        A --> E
+    end
+
+    subgraph "Browsing Flow"
+        I --> K --> L --> O --> Q --> U
+        L --> R --> S --> T --> U
+    end
+
+    subgraph "Playback Flow"
+        U --> V --> W --> X --> Y --> Z
+    end
+
+    subgraph "Controls Flow"
+        Z --> AA --> BB --> CC --> DD
+        Z --> EE --> FF --> GG --> HH --> II
+    end
+
+    subgraph "Search Flow"
+        JJ --> KK --> LL --> MM --> NN --> OO --> PP --> U
+    end
