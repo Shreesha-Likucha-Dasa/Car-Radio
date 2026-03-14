@@ -25,3 +25,8 @@ A modern, high-performance internet radio application built with **Media3** and 
 2. Add your `RadioApi` implementation.
 3. Build the project in Android Studio.
 4. Use the **Desktop Head Unit (DHU)** to test Android Auto features.
+
+5. ## ⚖️ License & Copyright
+Copyright (c) 2026 Shreesha Likucha Dasa. All Rights Reserved.
+This repository and its contents are for portfolio and educational demonstration only. 
+Unauthorized cloning, distribution, or commercial use of this code is strictly prohibited.
