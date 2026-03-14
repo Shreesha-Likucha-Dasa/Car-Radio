@@ -26,7 +26,13 @@ A modern, high-performance internet radio application built with **Media3** and 
 3. Build the project in Android Studio.
 4. Use the **Desktop Head Unit (DHU)** to test Android Auto features.
 
-5. ## ⚖️ License & Copyright
+## ⚖️ License & Copyright
 Copyright (c) 2026 Shreesha Likucha Dasa. All Rights Reserved.
 This repository and its contents are for portfolio and educational demonstration only. 
 Unauthorized cloning, distribution, or commercial use of this code is strictly prohibited.
+
+## 📩 Contact
+If you have any questions regarding this project or would like to request permission for use, feel free to reach out:
+* **Name:** Shreesha Innanje
+* **Email:** shreeshaIbhat@gmail.com
+* **LinkedIn:** [linkedin.com/in/shreesha-innanje-263b60a1](https://www.linkedin.com/in/shreesha-innanje-263b60a1/)
