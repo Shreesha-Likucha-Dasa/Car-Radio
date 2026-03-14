@@ -18,7 +18,7 @@ A modern, high-performance internet radio application built with **Media3** and 
 * **Architecture:** Coroutines for asynchronous API fetching
 
 ## 📸 Screenshots
-*(Add screenshots of your DHU or app here)*
+[*(DHU screenshot)*](https://github.com/Shreesha-Likucha-Dasa/Car-Radio/blob/main/DHU_image.png)
 
 ## 🛠 Setup & Installation
 1. Clone the repository.
